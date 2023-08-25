@@ -47,8 +47,6 @@ const handleSubmit = useCallback(
 );
 ```
 
----
-
 All this `ChromeMessage`, and `ChromeResponse` typings is on me. I decided to setup the types in a way where I always know which type I'm dealing with.
 
 So, I pass a `type` and a `payload` to the background script. The payload can contain anything that's serializable. The other calls on the extension all follow this pattern.
@@ -89,8 +87,6 @@ chrome.runtime.onMessage.addListener((request, _, sendResponse) => {
   return true;
 });
 ```
-
----
 
 Some important aspects here:
 
