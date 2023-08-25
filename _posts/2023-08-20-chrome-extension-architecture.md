@@ -4,9 +4,7 @@ title: A word about Chrome Extension architecture
 lead: Some thoughts on a recent project.
 ---
 
-Hello again. I have been working on a Chrome Extension for a while now, and I wanted to share some thoughts about it.
-
-The extension is not yet public, and it is in its second iteration of fixes. It's being tested by a team of people in Brazil. I will not disclose the name of the extension for now, but I will talk about its architecture.
+Hello again. I've been playing with a Chrome Extension for a while now, and I wanted to share some thoughts about it, and some ideas of how to architect it.
 
 # How a Chrome Extension works
 
