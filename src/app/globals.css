@@ -7,12 +7,5 @@
 }
 
 body {
-  @apply text-neutral-900 bg-neutral-100;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-@media (prefers-color-scheme: dark) {
-  body {
-    @apply text-neutral-100 bg-neutral-900;
-  }
+  @apply text-neutral-100 bg-neutral-900;
 }
