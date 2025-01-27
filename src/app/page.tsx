@@ -1,4 +1,4 @@
-import { Icon } from '@iconify/react';
+import IconLink from '@/components/IconLink';
 import Image from 'next/image';
 
 export const metadata = {
@@ -27,38 +27,34 @@ export default function Home() {
 
         {/* Social Links */}
         <div className="flex space-x-6">
-          <a
+          <IconLink
+            icon="mdi:github"
             href="https://github.com/andreyluiz"
             target="_blank"
             rel="noopener noreferrer"
             className="text-neutral-400 hover:text-neutral-500 transition-colors"
-          >
-            <Icon icon="mdi:github" className="w-8 h-8" />
-          </a>
-          <a
+          />
+          <IconLink
+            icon="mdi:linkedin"
             href="https://linkedin.com/in/andreyluiz"
             target="_blank"
             rel="noopener noreferrer"
             className="text-neutral-400 hover:text-neutral-500 transition-colors"
-          >
-            <Icon icon="mdi:linkedin" className="w-8 h-8" />
-          </a>
-          <a
+          />
+          <IconLink
+            icon="mdi:instagram"
             href="https://instagram.com/oandreyluiz"
             target="_blank"
             rel="noopener noreferrer"
             className="text-neutral-400 hover:text-neutral-500 transition-colors"
-          >
-            <Icon icon="mdi:instagram" className="w-8 h-8" />
-          </a>
-          <a
+          />
+          <IconLink
+            icon="mdi:file-document-outline"
             href="https://cv.andreyluiz.com"
             target="_blank"
             rel="noopener noreferrer"
             className="text-neutral-400 hover:text-neutral-500 transition-colors"
-          >
-            <Icon icon="mdi:file-document-outline" className="w-8 h-8" />
-          </a>
+          />
         </div>
       </div>
     </main>
