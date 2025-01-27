@@ -28,7 +28,7 @@ export default function IconLink({
       title={title}
       className={cn(
         "text-neutral-400 hover:text-neutral-500 transition-colors flex flex-col items-center",
-        className
+        className,
       )}
     >
       <Icon icon={icon} className={cn("size-8 text-center", iconClassName)} />

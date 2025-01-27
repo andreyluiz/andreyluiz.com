@@ -1,7 +1,7 @@
 import IconLink from "@/components/IconLink";
-import { PostList } from '@/components/PostList';
+import { PostList } from "@/components/PostList";
 import Section from "@/components/Section";
-import { groupPostsByDate } from '@/lib/posts';
+import { groupPostsByDate } from "@/lib/posts";
 import Image from "next/image";
 
 export const metadata = {
@@ -79,17 +79,17 @@ export default function Home() {
 
       <Section id="about" title="About Me">
         <p className="text-lg text-neutral-400 text-justify">
-          I&apos;m a web developer with experience working in multiple countries. I
-          started by learning core programming languages like HTML, CSS, and
-          JavaScript, along with classic development tools. Over time, I shifted
-          to modern frameworks like React and Svelte to build fast, interactive
-          websites.
+          I&apos;m a web developer with experience working in multiple
+          countries. I started by learning core programming languages like HTML,
+          CSS, and JavaScript, along with classic development tools. Over time,
+          I shifted to modern frameworks like React and Svelte to build fast,
+          interactive websites.
         </p>
         <p className="text-lg text-neutral-400 text-justify">
-          I&apos;ve designed user interfaces for complex platforms, improved user
-          engagement for online marketplaces, and optimized apps for unique
-          devices like smart TVs. I&apos;ve also led large-scale system upgrades,
-          ensuring smooth transitions and better performance.
+          I&apos;ve designed user interfaces for complex platforms, improved
+          user engagement for online marketplaces, and optimized apps for unique
+          devices like smart TVs. I&apos;ve also led large-scale system
+          upgrades, ensuring smooth transitions and better performance.
         </p>
         <p className="text-lg text-neutral-400 text-justify">
           My focus is always on writing clean, practical code. I thrive in teams

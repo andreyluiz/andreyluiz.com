@@ -1,5 +1,5 @@
-import { GroupedPosts } from '@/lib/posts';
-import Link from 'next/link';
+import { GroupedPosts } from "@/lib/posts";
+import Link from "next/link";
 
 interface PostListProps {
   posts: GroupedPosts;
@@ -14,7 +14,9 @@ export function PostList({ posts }: PostListProps) {
           <div key={year} className="space-y-6">
             {Object.entries(months).map(([month, posts]) => (
               <div key={month} className="space-y-4">
-                <h4 className="text-xl text-neutral-400">{month} {year}</h4>
+                <h4 className="text-xl text-neutral-400">
+                  {month} {year}
+                </h4>
                 <ul className="space-y-2">
                   {posts.map((post) => (
                     <li key={post.slug} className="gap-2">
@@ -25,7 +27,9 @@ export function PostList({ posts }: PostListProps) {
                         {post.title}
                       </Link>
                       &nbsp;
-                      <span className="text-sm text-neutral-400">{post.lead}</span>
+                      <span className="text-sm text-neutral-400">
+                        {post.lead}
+                      </span>
                     </li>
                   ))}
                 </ul>
@@ -35,4 +39,4 @@ export function PostList({ posts }: PostListProps) {
         ))}
     </div>
   );
-} 
+}

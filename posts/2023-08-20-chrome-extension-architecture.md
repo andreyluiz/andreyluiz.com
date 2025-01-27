@@ -41,7 +41,7 @@ const handleSubmit = useCallback(
       setError(true);
     }
   },
-  [onLoginSuccess]
+  [onLoginSuccess],
 );
 ```
 
@@ -55,12 +55,12 @@ The background script, then, receives the message, and does the API call. Here's
 
 ```ts
 async function handleAuthenticate(
-  request: ChromeMessage<{ identifier: string; password: string }>
+  request: ChromeMessage<{ identifier: string; password: string }>,
 ) {
   try {
     const result = await api.authenticate(
       request.payload.identifier,
-      request.payload.password
+      request.payload.password,
     );
     return getFormattedData(result, null);
   } catch (e) {

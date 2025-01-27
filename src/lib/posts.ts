@@ -1,6 +1,6 @@
-import fs from 'fs';
-import matter from 'gray-matter';
-import path from 'path';
+import fs from "fs";
+import matter from "gray-matter";
+import path from "path";
 
 export interface Post {
   slug: string;
@@ -23,27 +23,29 @@ export interface GroupedPosts {
   };
 }
 
-const postsDirectory = path.join(process.cwd(), 'posts');
+const postsDirectory = path.join(process.cwd(), "posts");
 
 export function getAllPosts(): Post[] {
   const fileNames = fs.readdirSync(postsDirectory);
-  
+
   return fileNames
-    .filter(fileName => fileName.endsWith('.md'))
+    .filter((fileName) => fileName.endsWith(".md"))
     .map((fileName) => {
       const fullPath = path.join(postsDirectory, fileName);
-      const fileContents = fs.readFileSync(fullPath, 'utf8');
+      const fileContents = fs.readFileSync(fullPath, "utf8");
       const { data, content } = matter(fileContents);
-      
+
       // Assuming filename format: YYYY-MM-DD-slug.md
-      const [year, month, day, ...slugParts] = fileName.replace('.md', '').split('-');
+      const [year, month, day, ...slugParts] = fileName
+        .replace(".md", "")
+        .split("-");
       const date = `${year}-${month}-${day}`;
-      const slug = slugParts.join('-');
+      const slug = slugParts.join("-");
 
       return {
         slug,
         title: data.title || slug,
-        lead: data.lead || '',
+        lead: data.lead || "",
         date,
         content,
       };
@@ -53,7 +55,7 @@ export function getAllPosts(): Post[] {
 
 export function getPostBySlug(slug: string): Post | null {
   const posts = getAllPosts();
-  return posts.find(post => post.slug === slug) || null;
+  return posts.find((post) => post.slug === slug) || null;
 }
 
 export function groupPostsByDate(): GroupedPosts {
@@ -61,8 +63,10 @@ export function groupPostsByDate(): GroupedPosts {
   const grouped: GroupedPosts = {};
 
   posts.forEach((post) => {
-    const [year, month] = post.date.split('-');
-    const monthName = new Date(`${year}-${month}-01`).toLocaleString('en-US', { month: 'long' });
+    const [year, month] = post.date.split("-");
+    const monthName = new Date(`${year}-${month}-01`).toLocaleString("en-US", {
+      month: "long",
+    });
 
     if (!grouped[year]) {
       grouped[year] = {};
@@ -80,4 +84,4 @@ export function groupPostsByDate(): GroupedPosts {
   });
 
   return grouped;
-} 
+}
