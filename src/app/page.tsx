@@ -1,5 +1,7 @@
 import IconLink from "@/components/IconLink";
+import { PostList } from '@/components/PostList';
 import Section from "@/components/Section";
+import { groupPostsByDate } from '@/lib/posts';
 import Image from "next/image";
 
 export const metadata = {
@@ -8,6 +10,8 @@ export const metadata = {
 };
 
 export default function Home() {
+  const posts = groupPostsByDate();
+
   return (
     <main className="container flex flex-col items-center justify-center p-8 pb-24 space-y-24">
       <div className="h-screen flex flex-col items-center justify-center space-y-6">
@@ -27,30 +31,41 @@ export default function Home() {
         <h2 className="text-4xl text-neutral-400">Software Engineer</h2>
 
         {/* Social Links */}
-        <div className="flex space-x-6 pb-24">
+        <div className="flex gap-6 pb-24">
           <IconLink
             icon="mdi:github"
             href="https://github.com/andreyluiz"
             target="_blank"
             rel="noopener noreferrer"
+            title="GitHub"
           />
           <IconLink
             icon="mdi:linkedin"
             href="https://linkedin.com/in/andreyluiz"
             target="_blank"
             rel="noopener noreferrer"
+            title="LinkedIn"
           />
           <IconLink
             icon="mdi:instagram"
             href="https://instagram.com/oandreyluiz"
             target="_blank"
             rel="noopener noreferrer"
+            title="Instagram"
           />
           <IconLink
             icon="mdi:file-document-outline"
             href="https://cv.andreyluiz.com"
             target="_blank"
             rel="noopener noreferrer"
+            title="CV"
+          />
+          <IconLink
+            icon="mdi:briefcase"
+            href="https://portfolio.andreyluiz.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Portfolio"
           />
         </div>
 
@@ -83,9 +98,7 @@ export default function Home() {
       </Section>
 
       <Section id="posts" title="Latest posts">
-        <p className="text-lg text-neutral-400 text-justify">
-          Coming soon...
-        </p>
+        <PostList posts={posts} />
       </Section>
     </main>
   );
