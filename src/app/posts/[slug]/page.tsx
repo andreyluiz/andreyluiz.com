@@ -4,16 +4,18 @@ import { getAllPosts, getPostBySlug } from "@/lib/posts";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import { notFound } from "next/navigation";
 
-export async function generateMetadata({ params }: { params: { slug: string } }) {
-  const post = getPostBySlug(params.slug);
-  return {
-    title: post?.title || "Post not found",
-  };
+interface Params {
+  slug: string;
 }
 
 interface PostPageProps {
-  params: {
-    slug: string;
+  params: Promise<Params>;
+}
+
+export async function generateMetadata({ params }: PostPageProps) {
+  const post = getPostBySlug((await params).slug);
+  return {
+    title: post?.title || "Post not found",
   };
 }
 
