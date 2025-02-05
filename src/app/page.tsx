@@ -13,7 +13,7 @@ export default function Home() {
   const posts = groupPostsByDate();
 
   return (
-    <main className="container flex flex-col items-center justify-center p-8 pb-24 space-y-24">
+    <main className="container flex flex-col items-center justify-center p-8 pb-24 space-y-24 mx-auto">
       <div className="h-screen flex flex-col items-center justify-center space-y-6">
         {/* Profile Image */}
         <div className="w-72 h-72 rounded-full overflow-hidden border-4 border-neutral-200">

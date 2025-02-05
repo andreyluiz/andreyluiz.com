@@ -26,6 +26,7 @@ export function Navigation() {
           target="_blank"
           rel="noopener noreferrer"
           title="Portfolio"
+          disabled
         />
       </div>
     </nav>
