@@ -9,6 +9,7 @@ interface IconLinkProps {
   title?: string;
   className?: string;
   iconClassName?: string;
+  disabled?: boolean;
 }
 
 export default function IconLink({
@@ -19,6 +20,7 @@ export default function IconLink({
   title,
   className,
   iconClassName,
+  disabled,
 }: IconLinkProps) {
   return (
     <a
@@ -29,6 +31,7 @@ export default function IconLink({
       className={cn(
         "text-neutral-400 hover:text-neutral-500 transition-colors flex flex-col items-center",
         className,
+        disabled && "pointer-events-none opacity-50 cursor-not-allowed",
       )}
     >
       <Icon icon={icon} className={cn("size-8 text-center", iconClassName)} />
