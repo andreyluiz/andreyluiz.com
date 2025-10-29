@@ -1,0 +1,17 @@
+<!doctype html>
+
+<article>
+  <h1>{ title }</h1>
+
+  <ul>
+    <li :each="page in blog">
+      <a href="{ page.url }">
+        <p>
+          <formatted-date :date="page.date" />
+        </p>
+        <h3>{ page.title }</h3>
+        <p>{{ markdown(page.description) }}</p>
+      </a>
+    </li>
+  </ul>
+</article>

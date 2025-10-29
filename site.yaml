@@ -1,0 +1,23 @@
+meta:
+  title: Andrey Luiz / Blog
+  title_template: %s / Andrey Luiz
+  author: Andrey Luiz
+
+site:
+  origin: https://andreyluiz.com
+  view_transitions: true
+
+rss:
+  enabled: true
+  title: Andrey's Blog
+  description: Insights, thoughts, and opinions on web development.
+  collection: blog
+
+design:
+  inline_css: true
+
+collections:
+  blog:
+    include: [posts/]
+    require: [title]
+    sort: date desc
