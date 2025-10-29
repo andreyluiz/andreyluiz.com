@@ -1,0 +1,58 @@
+@layer base {
+  :root {
+    --base-100: #fafbfb;
+    --base-200: #f0f3f3;
+    --base-300: #ccdbdc;
+    --base-400: #8fa5a7;
+    --base-500: #5a7072;
+    --base-600: #3d4f50;
+    --base-700: #2a3334;
+    --base-800: #191919;
+
+    /* Accent colors for interactive elements */
+    --accent-primary: #0075a2;
+    --accent-primary-hover: #005a7d;
+    --accent-primary-active: #004460;
+
+    /* Secondary accent colors for variety */
+    --accent-secondary: #c04cfd; /* Purple */
+    --accent-tertiary: #0075a2; /* Blue */
+    --accent-success: #10b981; /* Green */
+    --accent-warning: #fcba04; /* Yellow */
+
+    /* Shadow colors */
+    --shadow-sm: rgba(25, 25, 25, 0.04);
+    --shadow-md: rgba(25, 25, 25, 0.08);
+    --shadow-lg: rgba(25, 25, 25, 0.12);
+  }
+
+  /* Apply dark theme based on system preference */
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --base-100: #191919;
+      --base-200: #2a3334;
+      --base-300: #3d4f50;
+      --base-400: #5a7072;
+      --base-500: #8fa5a7;
+      --base-600: #ccdbdc;
+      --base-700: #e8eeef;
+      --base-800: #f5f8f8;
+
+      /* Accent colors for dark mode */
+      --accent-primary: #0075a2;
+      --accent-primary-hover: #0091c7;
+      --accent-primary-active: #00a8e4;
+
+      /* Secondary accent colors for variety */
+      --accent-secondary: #d47eff;
+      --accent-tertiary: #00a8e4;
+      --accent-success: #34d399;
+      --accent-warning: #fcba04;
+
+      /* Shadow colors for dark mode */
+      --shadow-sm: rgba(0, 0, 0, 0.2);
+      --shadow-md: rgba(0, 0, 0, 0.3);
+      --shadow-lg: rgba(0, 0, 0, 0.4);
+    }
+  }
+}

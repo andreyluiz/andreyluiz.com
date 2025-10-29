@@ -1,8 +1,53 @@
 <!doctype html>
 
 <article>
-  <h1>{ title }</h1>
+  <section class="intro">
+    <img src="/profile.webp" alt="Andrey Luiz" class="profile-photo" />
 
+    <p>
+      I'm a senior full stack engineer with over nine years of experience
+      working with JavaScript frameworks, Python, and AWS.
+    </p>
+
+    <p>
+      I've built products that improved reliability, boosted user engagement,
+      and generated revenue. My expertise spans React, SvelteKit, Node.js,
+      Python, and Rust, and I hold AWS and Rust certifications.
+    </p>
+
+    <p>
+      Based in Fribourg, Switzerland, I focus on delivering results through
+      clean, maintainable code.
+    </p>
+
+    <nav class="social-links">
+      <a href="https://github.com/andreyluiz" target="_blank" rel="noopener">
+        <i class="iconoir-github" />
+        Github
+      </a>
+
+      <a href="https://instagram.com/andreyluiz" target="_blank" rel="noopener">
+        <i class="iconoir-instagram" />
+        Instagram
+      </a>
+
+      <!--<a
+        href="https://linkedin.com/in/andreyluiz"
+        target="_blank"
+        rel="noopener"
+      >
+        <i class="iconoir-linkedin" />
+        LinkedIn
+      </a>-->
+
+      <a href="https://cv.andreyluiz.com" target="_blank" rel="noopener">
+        <i class="iconoir-page" />
+        CV
+      </a>
+    </nav>
+  </section>
+
+  <h2>Blog</h2>
   <ul>
     <li :each="page in blog">
       <a href="{ page.url }">
