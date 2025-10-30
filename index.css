@@ -75,6 +75,14 @@
     text-wrap: pretty;
   }
 
+  a {
+    color: var(--base-700);
+  }
+
+  article p {
+    text-align: justify;
+  }
+
   /* placeholder images */
   figure {
     background-color: var(--base-200);
@@ -174,7 +182,7 @@
       text-align: justify;
     }
 
-    .profile-photo {
+    img {
       width: 300px;
       height: 300px;
       border-radius: 50%;
@@ -193,9 +201,9 @@
       text-align: center;
     }
 
-    .social-links {
+    nav {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(4, 1fr);
       grid-template-rows: 1fr;
       gap: 1.5em;
       margin-top: 2em;
