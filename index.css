@@ -205,6 +205,11 @@
       gap: 1.5em;
       margin-top: 2em;
 
+      @media (width < 600px) {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+      }
+
       a {
         color: var(--base-600);
         text-decoration: none;
