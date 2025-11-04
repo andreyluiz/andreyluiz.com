@@ -82,11 +82,19 @@
 
   /* placeholder images */
   figure {
-    background-color: var(--base-200);
     margin: 1.5em 0;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    margin-top: 2em;
+
+    figcaption {
+      font-size: 0.875em;
+      color: var(--base-400);
+      margin-top: 0.5em;
+      text-align: center;
+    }
 
     > div {
       height: var(--height);
