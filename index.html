@@ -48,16 +48,51 @@
     </nav>
   </section>
 
-  <h2>Blog</h2>
-  <ul>
-    <li :each="page in blog">
-      <a href="{ page.url }">
-        <p>
-          <formatted-date :date="page.date" />
-        </p>
-        <h3>{ page.title }</h3>
-        <p>{{ markdown(page.description) }}</p>
-      </a>
-    </li>
-  </ul>
+  <h1>Blog</h1>
+
+  <script>
+    groupByMonth(posts) {
+      const formatter = new Intl.DateTimeFormat('en-US', {
+        month: 'long',
+        year: 'numeric'
+      });
+      const groups = [];
+      let currentGroup;
+
+      for (const post of posts) {
+        const date = new Date(post.date);
+        const key = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, "0")}`;
+
+        if (!currentGroup || currentGroup.key !== key) {
+          currentGroup = {
+            key,
+            label: formatter.format(date),
+            posts: []
+          };
+          groups.push(currentGroup);
+        }
+
+        currentGroup.posts.push(post);
+      }
+
+      return groups;
+    }
+
+    this.blogByMonth = this.groupByMonth(this.blog);
+  </script>
+
+  <section class="blog-month" :each="group in blogByMonth">
+    <h3>{ group.label }</h3>
+    <ul>
+      <li :each="page in group.posts">
+        <a href="{ page.url }">
+          <p>
+            <formatted-date :date="page.date" />
+          </p>
+          <h3>{ page.title }</h3>
+          <p>{{ markdown(page.description) }}</p>
+        </a>
+      </li>
+    </ul>
+  </section>
 </article>

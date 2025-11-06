@@ -263,6 +263,30 @@
   }
 
   /* major listings */
+  .blog-month {
+    margin-block: 2.5rem;
+
+    &:first-of-type {
+      margin-top: 1.5rem;
+    }
+
+    + .blog-month {
+      border-top: 1px solid var(--base-200);
+      padding-top: 2rem;
+    }
+
+    h3 {
+      margin: 0 0 1.5rem;
+      font-size: 1.35em;
+      letter-spacing: -0.01em;
+      color: var(--base-700);
+    }
+
+    ul:has(h2, h3) {
+      margin-block: 0;
+    }
+  }
+
   ul:has(h2, h3) {
     list-style-type: none;
     margin-block: 3rem;
