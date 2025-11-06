@@ -208,14 +208,21 @@
 
     nav {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(5, 1fr);
       grid-template-rows: 1fr;
       gap: 1.5em;
       margin-top: 2em;
 
       @media (width < 600px) {
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(2, 1fr);
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+
+        a:nth-child(-n + 3) {
+          grid-column: span 2;
+        }
+
+        a:nth-child(n + 4) {
+          grid-column: span 3;
+        }
       }
 
       a {

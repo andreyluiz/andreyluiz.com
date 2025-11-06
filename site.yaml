@@ -2,7 +2,7 @@ meta:
   title: Andrey Luiz / Blog
   title_template: %s / Andrey Luiz
   author: Andrey Luiz
-  favicon: img/favicon.ico
+  favicon: /img/favicon.ico
 
 site:
   origin: https://andreyluiz.com
