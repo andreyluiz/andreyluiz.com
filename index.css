@@ -80,6 +80,20 @@
     text-align: justify;
   }
 
+  blockquote {
+    border-left: 4px solid var(--base-200);
+    padding-left: 1em;
+    margin-left: 0;
+    color: var(--base-600);
+
+    & p {
+      margin-block: 0;
+      font-size: 0.9em;
+      color: var(--base-400);
+      font-style: italic;
+    }
+  }
+
   /* placeholder images */
   figure {
     margin: 1.5em 0;
@@ -94,6 +108,10 @@
       color: var(--base-400);
       margin-top: 0.5em;
       text-align: center;
+    }
+
+    &.narrow img {
+      width: 300px;
     }
 
     > div {
